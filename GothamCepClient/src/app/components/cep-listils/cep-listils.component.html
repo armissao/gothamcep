@@ -1,0 +1,51 @@
+<div class="list row">
+    <div class="col-md-8">
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Consulta CEP"
+          [(ngModel)]="numero"
+        />
+        <div class="input-group-append">
+          <button
+            class="btn btn-outline-secondary"
+            type="button"
+            (click)="searchNumero()"
+          >
+            Pesquisar
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <h4>CEP Lista</h4>
+      <ul class="list-group">
+        <li
+          class="list-group-item"
+          *ngFor="let cep of ceps; let i = index"
+          [class.active]="i == currentIndex"
+          (click)="setActiveCep(cep, i)"
+        >
+          {{ cep.numero }}
+        </li>
+      </ul>
+     
+    </div>
+    <div class="col-md-6">
+      <div *ngIf="currentCep.id">
+        <h4>Cep</h4>
+        <div>
+          <label><strong>Numero:</strong></label> {{ currentCep.numero }}
+        </div>
+         <a class="badge badge-warning" routerLink="/ceps/{{ currentCep.id }}">
+          Editar
+        </a>
+      </div>
+  
+      <div *ngIf="!currentCep">
+        <br />
+        <p>click sobre o Cep...</p>
+      </div>
+    </div>
+  </div>

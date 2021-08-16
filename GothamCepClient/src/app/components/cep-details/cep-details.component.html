@@ -1,0 +1,31 @@
+<div>
+    <div *ngIf="currentCep.id" class="edit-form">
+      <h4>CEP</h4>
+      <form>
+        <div class="form-group">
+          <label for="numero">Numero</label>
+          <input
+            type="text"
+            class="form-control"
+            id="numero"
+            [(ngModel)]="currentCep.numero"
+            name="numero"
+          />
+        </div>
+        </form>
+  
+      <button class="badge badge-danger mr-2" (click)="deleteCep()">
+        Excluir
+      </button>
+  
+      <button
+        type="submit"
+        class="badge badge-success mb-2"
+        (click)="updateCep()"
+      >
+        Atualizar
+      </button>
+      <p>{{ message }}</p>
+    </div>
+  
+  </div>

@@ -1,0 +1,21 @@
+<div>
+    <div class="submit-form">
+      <div>
+        <div class="form-group">
+          <label for="numero">Numero</label>
+          <input 
+            type="text"
+            class="form-control"
+            id="numero"
+            required
+            [(ngModel)]="cep.numero"
+            name="numero"
+          />
+        </div>
+        <button (click)="saveCep()" class="btn btn-success">Cadastrar</button>
+        
+        <p>{{ message }}</p>
+      </div>
+      
+    </div>
+  </div>
